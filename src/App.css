@@ -33,6 +33,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 .App-title {
   font-size: 1.5em;
 }
+.cancelled{
+    color: #dddddd;
+    padding: 5px;
+}
 
 .App-intro {
   font-size: large;

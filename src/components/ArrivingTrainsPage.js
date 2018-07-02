@@ -11,6 +11,7 @@ export class ArrivingTrainsPage extends React.Component {
       trains: []
     };
     this.filterArrivingTrains = this.filterArrivingTrains.bind(this);
+    this.compareArrivingTimes = this.compareArrivingTimes.bind(this);
   }
   componentDidMount() {
     this.filterArrivingTrains();
@@ -19,16 +20,25 @@ export class ArrivingTrainsPage extends React.Component {
   filterArrivingTrains(){
     let trains = this.props.stationTrains;
     console.log('trainsbeforefilter:', trains);
-    trains = trains.filter(train => {
-      let acceptableTrain = train.timeTableRows
-        .filter(station => station.stationShortCode === this.state.station.stationShortCode)
-        .filter(stop => stop.type === 'ARRIVAL');
-      if(acceptableTrain[0]){
-        return acceptableTrain[0];
-      }
+    trains = trains
+      .filter(train => {
+        let acceptableTrain = train.timeTableRows
+          .filter(station => station.stationShortCode === this.state.station.stationShortCode)
+          .filter(stop => stop.type === 'ARRIVAL');
+        if(acceptableTrain[0]){
+          return acceptableTrain[0];
+        }
     });
     this.setState({trains});
     console.log('trainsAfterFilter', trains);
+  }
+  compareArrivingTimes(a, b){
+    let timeA = new Date(a.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
+      && station.type === 'ARRIVAL').scheduledTime);
+
+    let timeB = new Date(b.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
+      && station.type === 'ARRIVAL').scheduledTime);
+    return timeA-timeB;
   }
 
   render() {
@@ -45,7 +55,7 @@ export class ArrivingTrainsPage extends React.Component {
           </tr>
           </thead>
           <tbody>
-          {this.state.trains.map(train =>
+          {this.state.trains.sort(this.compareArrivingTimes).map(train =>
             <TrainInfoCmp key={train.trainNumber} stopType={'ARRIVAL'} station={this.state.station} train={train} stationList={this.state.stationList} />
           )}
           </tbody>

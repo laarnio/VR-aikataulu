@@ -42,14 +42,30 @@ export class TrainInfoCmp extends React.Component {
   }
 
   render() {
-    return (
+
+    if(this.state.train.cancelled) {
+      return (
+        <tr className='cancelled'>
+          <td>{this.state.trainName}</td>
+          <td>{this.state.firstStation}</td>
+          <td>{this.state.lastStation}</td>
+          <td>
+            {this.state.selectedStationStop}
+            <br/>
+            <font color="red">Cancelled</font>
+          </td>
+        </tr>
+
+      );
+    } else{
+      return(
         <tr>
           <td>{this.state.trainName}</td>
           <td>{this.state.firstStation}</td>
           <td>{this.state.lastStation}</td>
           <td>{this.state.selectedStationStop}</td>
         </tr>
-
-    );
+      );
+    }
   }
 }
