@@ -35,9 +35,21 @@ export class ArrivingTrainsPage extends React.Component {
     return (
       <div className='container'>
         <p>OLA</p>
-        {this.state.trains.map(train =>
-          <TrainInfoCmp key={train.trainNumber} stopType={'ARRIVAL'} station={this.state.station} train={train} stationList={this.state.stationList} />
-        )}
+        <table width="100%">
+          <thead>
+          <tr>
+            <th>Juna</th>
+            <th>Lähtöasema</th>
+            <th>Pääteasema</th>
+            <th>Saapuu</th>
+          </tr>
+          </thead>
+          <tbody>
+          {this.state.trains.map(train =>
+            <TrainInfoCmp key={train.trainNumber} stopType={'ARRIVAL'} station={this.state.station} train={train} stationList={this.state.stationList} />
+          )}
+          </tbody>
+        </table>
       </div>
     );
   }

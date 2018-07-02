@@ -40,14 +40,15 @@ export class TrainInfoCmp extends React.Component {
     }
 
   }
+
   render() {
     return (
-        <div>
-          {this.state.trainName}
-          {this.state.firstStation}
-          {this.state.lastStation}
-          {this.state.selectedStationStop}
-        </div>
+        <tr>
+          <td>{this.state.trainName}</td>
+          <td>{this.state.firstStation}</td>
+          <td>{this.state.lastStation}</td>
+          <td>{this.state.selectedStationStop}</td>
+        </tr>
 
     );
   }

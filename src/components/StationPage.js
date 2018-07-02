@@ -44,10 +44,13 @@ export class StationPage extends React.Component {
     let stationShortCode = station.stationShortCode;
     let url = 'https://rata.digitraffic.fi/api/v1/live-trains/station/'
       + stationShortCode
-      + '?include_nonstopping=false';
+      + '?minutes_before_departure=60'
+      + '&minutes_after_departure=0'
+      + '&minutes_before_arrival=200'
+      + '&minutes_after_arrival=0';
     axios.get(url)
       .then(res => {
-        console.log(res.data);
+        console.log('tämä saatiin:',res.data);
         let trains = res.data
           .filter(train => train.runningCurrently)
           .filter(train => train.trainCategory !== 'Cargo');

@@ -13,10 +13,8 @@ class App extends Component {
       <div>
         <Router>
           <div>
-            <StationPage>
-              <Route path='/arriving' component={ArrivingTrainsPage}/>
-              <Route path='/departing' component={DepartingTrainsPage}/>
-            </StationPage>
+            <Route path='/' component={StationPage} />
+
 
           </div>
         </Router>
