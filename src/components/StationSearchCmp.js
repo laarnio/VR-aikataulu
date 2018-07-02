@@ -7,8 +7,8 @@ export class StationSearchCmp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [],
-      labelKey: '',
+      stationList: this.props.stationList,
+      labelKey: this.props.labelKey,
       selectedOption: ''
     }
   }
@@ -21,7 +21,6 @@ export class StationSearchCmp extends React.Component {
     }
   };
   componentDidMount() {
-    this.setState({list: this.props.list, labelKey:this.props.labelKey})
   }
 
   render() {
@@ -30,7 +29,7 @@ export class StationSearchCmp extends React.Component {
       <div className="container">
         <b> Hae aseman nimellä:</b>
         <Select
-          options={this.state.list}
+          options={this.state.stationList}
           labelKey={this.state.labelKey}
           value={selectedOption}
           onChange={this.handleChange}

@@ -7,8 +7,8 @@ export const NavBar = (props) => {
       <div className='container'>
         <div className='navbar-header'>
           <ul className='nav navbar-nav'>
-            <li><Link to={'/arriving'}>Saapuvat</Link></li>
-            <li><Link to={'/departing'}>Lähtevät</Link></li>
+            <li><Link to={'/station/arriving'}>Saapuvat</Link></li>
+            <li><Link to={'/station/departing'}>Lähtevät</Link></li>
           </ul>
         </div>
       </div>
