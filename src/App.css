@@ -13,43 +13,58 @@
   padding: 20px;
   color: white;
 }
+
 .App-Station-header {
   background-color: darkgreen;
-  height: 50px;
   padding: 20px;
   color: white;
+  box-shadow: 0px 3px 5px 0px #cccccc;
 }
+
 td {
   border-bottom: 1px solid #ddd;
   height: 50px;
   padding: 10px;
   vertical-align: center;
 }
-th{
+
+th {
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
-tr:nth-child(even) {background-color: #f2f2f2;}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 .App-title {
   font-size: 1.5em;
 }
-.hilight{
-    color:red;
-    font-size: large;
+
+.hilight {
+  color:red;
+  font-size: large;
 }
-.cancelled{
-    color: #dddddd;
-    padding: 5px;
+
+.cancelled {
+  color: #dddddd;
+  padding: 5px;
 }
-.navigation--active {
-    color: red;
-}
+
 .App-intro {
   font-size: large;
 }
 
+.navbar.container .container {
+  border-bottom: 1px solid #ccc;
+}
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.navbar .nav.navbar-nav li:active {
+  border: 1px solid #ccc;
+  border-bottom: 1px solid white;
+}
+
+.navbar .nav.navbar-nav li {
+  border: 0px solid #ccc;
+  margin-bottom: -1px;
+  border-radius: 4px;
 }

@@ -3,12 +3,12 @@ import {StationHeader} from "./StationHeader";
 import {StationSearchCmp} from "./StationSearchCmp";
 import axios from "axios";
 import {NavBar} from "./NavBar";
-import {ArrivingTrainsPage} from "./ArrivingTrainsPage";
+import {TrainsPage} from "./TrainsPage";
 
 import {
   Route
 } from 'react-router-dom'
-import {DepartingTrainsPage} from "./DepartingTrainsPage";
+
 
 export class StationPage extends React.Component {
   constructor(props) {
@@ -19,14 +19,11 @@ export class StationPage extends React.Component {
       labelKeyForSearch: 'stationName',
       selectedStation: '',
       stationTrains: []
-
     };
     this.setSelectedStation = this.setSelectedStation.bind(this);
-
   }
 
-  //TODO: filtered result with passenger traffic
-  componentWillMount() {
+  componentDidMount() {
     let url = 'https://rata.digitraffic.fi/api/v1/metadata/stations';
     axios.get(url)
       .then(res => {
@@ -56,30 +53,28 @@ export class StationPage extends React.Component {
             && train.trainCategory !== 'Shunting');
         console.log('tämä jäi:', trains);
         this.setState({stationTrains: trains})
-
-
       })
       .catch(err => console.log(err));
-
   }
-
 
   render() {
     const departingPage = () => {
       return (
-        <DepartingTrainsPage
+        <TrainsPage
           stationTrains={this.state.stationTrains}
           stationList={this.state.stationList}
           station = {this.state.selectedStation}
+          stopType = 'DEPARTURE'
         />
       );
     };
     const arrivingPage = () => {
       return (
-        <ArrivingTrainsPage
+        <TrainsPage
           stationTrains={this.state.stationTrains}
           stationList={this.state.stationList}
           station = {this.state.selectedStation}
+          stopType = 'ARRIVAL'
         />
       );
     };
@@ -103,7 +98,6 @@ export class StationPage extends React.Component {
           <Route path={'/station/departing'} component={departingPage} />
         </div>
       </div>
-
     );
   }
 }

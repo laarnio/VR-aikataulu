@@ -16,6 +16,7 @@ export class TrainInfoCmp extends React.Component {
       trainName: ''
     };
   }
+
   componentDidMount() {
     let firstStation = this.stationNameByShortCode(this.state.train.timeTableRows[0].stationShortCode);
     let lastStation = this.stationNameByShortCode(this.state.train.timeTableRows.slice(-1)[0].stationShortCode);
@@ -25,8 +26,9 @@ export class TrainInfoCmp extends React.Component {
       .filter(station => station.stationShortCode === this.state.selectedStation.stationShortCode)
       .filter(stop => stop.type === this.state.stopType);
 
-    let scheduledStop =arrivingThisStation[0].scheduledTime;
+    let scheduledStop = arrivingThisStation[0].scheduledTime;
     let estimatedStop = arrivingThisStation[0].liveEstimateTime;
+
     this.setState({
       firstStation: firstStation,
       lastStation: lastStation,
@@ -35,12 +37,12 @@ export class TrainInfoCmp extends React.Component {
       estimatedStop: estimatedStop
     });
   }
+
   stationNameByShortCode(shortCode) {
     let station = this.state.stationList.filter(station => station.stationShortCode === shortCode)[0];
     if(station) {
       return station.stationName;
     }
-
   }
 
   render() {
@@ -91,12 +93,12 @@ export class TrainInfoCmp extends React.Component {
         </tr>
       );
     };
-    if(this.state.train.cancelled) {
+    if (this.state.train.cancelled) {
       return (<Cancelled/>);
-    } else if(this.state.estimatedStop && (estimatedStopTime !== scheduledStopTime)) {
+    } else if (this.state.estimatedStop && estimatedStopTime !== scheduledStopTime) {
       return (<LateOrEarly/>);
-    } else{
-      return <OnTime/>
+    } else {
+      return (<OnTime/>);
     }
   }
 }

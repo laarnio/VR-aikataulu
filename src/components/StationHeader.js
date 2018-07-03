@@ -1,12 +1,10 @@
 import React from "react";
 
 
-export const StationHeader = (props) => {
+export const StationHeader = () => {
   return (
       <div className="App-Station-header">
-        <p>
           Aseman junatiedot
-        </p>
       </div>
   );
 };

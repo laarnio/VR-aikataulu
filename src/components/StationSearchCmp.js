@@ -20,8 +20,6 @@ export class StationSearchCmp extends React.Component {
       console.log('Selected:', selectedOption);
     }
   };
-  componentDidMount() {
-  }
 
   render() {
     const { selectedOption } = this.state;
@@ -38,5 +36,4 @@ export class StationSearchCmp extends React.Component {
     )
     ;
   }
-
 }
