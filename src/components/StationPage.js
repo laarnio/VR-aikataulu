@@ -31,12 +31,10 @@ export class StationPage extends React.Component {
     axios.get(url)
       .then(res => {
         let filteredResult = res.data.filter(station => station.passengerTraffic);
-
         this.setState({stationList: filteredResult, showSearchComp: true});
         return res;
       })
       .catch(err => console.log(err));
-
   }
 
   setSelectedStation(station) {
@@ -44,18 +42,21 @@ export class StationPage extends React.Component {
     let stationShortCode = station.stationShortCode;
     let url = 'https://rata.digitraffic.fi/api/v1/live-trains/station/'
       + stationShortCode
-      + '?minutes_before_departure=60'
+      + '?minutes_before_departure=120'
       + '&minutes_after_departure=0'
-      + '&minutes_before_arrival=200'
+      + '&minutes_before_arrival=120'
       + '&minutes_after_arrival=0';
     axios.get(url)
       .then(res => {
         console.log('tämä saatiin:',res.data);
         let trains = res.data
-          .filter(train => train.runningCurrently)
-          .filter(train => train.trainCategory !== 'Cargo');
-
+          .filter(train =>
+            train.trainCategory !== 'Cargo'
+            && train.trainCategory !== 'Locomotive'
+            && train.trainCategory !== 'Shunting');
+        console.log('tämä jäi:', trains);
         this.setState({stationTrains: trains})
+
 
       })
       .catch(err => console.log(err));
@@ -87,9 +88,7 @@ export class StationPage extends React.Component {
         <div>
           <StationHeader/>
         </div>
-
         <hr/>
-
         <div>
           {this.state.showSearchComp ?
             <StationSearchCmp
@@ -98,8 +97,8 @@ export class StationPage extends React.Component {
               selectedStation = {this.setSelectedStation}/>
             : 'Loading stations'}
         </div>
-          <NavBar/>
         <div>
+          <NavBar/>
           <Route path={'/station/arriving'} component={arrivingPage}/>
           <Route path={'/station/departing'} component={departingPage} />
         </div>
@@ -107,5 +106,4 @@ export class StationPage extends React.Component {
 
     );
   }
-
 }

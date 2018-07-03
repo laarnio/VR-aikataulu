@@ -24,28 +24,38 @@ export class ArrivingTrainsPage extends React.Component {
       .filter(train => {
         let acceptableTrain = train.timeTableRows
           .filter(station => station.stationShortCode === this.state.station.stationShortCode)
-          .filter(stop => stop.type === 'ARRIVAL');
+          .filter(station => station.type === 'ARRIVAL');
         if(acceptableTrain[0]){
           return acceptableTrain[0];
         }
+        return null;
     });
     this.setState({trains});
     console.log('trainsAfterFilter', trains);
   }
   compareArrivingTimes(a, b){
-    let timeA = new Date(a.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
-      && station.type === 'ARRIVAL').scheduledTime);
-
-    let timeB = new Date(b.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
-      && station.type === 'ARRIVAL').scheduledTime);
-    return timeA-timeB;
+    let timeA, timeB = '';
+    let stationA = a.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
+      && station.type === 'ARRIVAL');
+    let stationB = b.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
+      && station.type === 'ARRIVAL');
+    if(stationA.liveEstimateTime) {
+      timeA = new Date(stationA.liveEstimateTime);
+    } else {
+      timeA = new Date(stationA.scheduledTime);
+    }
+    if(stationB.liveEstimateTime) {
+      timeB = new Date(stationB.liveEstimateTime);
+    } else {
+      timeB = new Date(stationB.scheduledTime);
+    }
+    return timeA - timeB;
   }
 
   render() {
     return (
       <div className='container'>
-        <p>OLA</p>
-        <table width="100%">
+        <table width='100%'>
           <thead>
           <tr>
             <th>Juna</th>

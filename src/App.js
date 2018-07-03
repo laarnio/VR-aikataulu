@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import {StationPage} from "./components/StationPage"
-import {ArrivingTrainsPage} from "./components/ArrivingTrainsPage";
-import {DepartingTrainsPage} from "./components/DepartingTrainsPage"
 import {
   BrowserRouter as Router,
     Route
@@ -14,8 +12,6 @@ class App extends Component {
         <Router>
           <div>
             <Route path='/' component={StationPage} />
-
-
           </div>
         </Router>
 
