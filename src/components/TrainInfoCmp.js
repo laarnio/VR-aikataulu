@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 export class TrainInfoCmp extends React.Component {
@@ -18,16 +18,16 @@ export class TrainInfoCmp extends React.Component {
   }
 
   componentDidMount() {
-    let firstStation = this.stationNameByShortCode(this.state.train.timeTableRows[0].stationShortCode);
-    let lastStation = this.stationNameByShortCode(this.state.train.timeTableRows.slice(-1)[0].stationShortCode);
-    let trainName = this.state.train.trainType + ' ' + this.state.train.trainNumber;
+    const firstStation = this.stationNameByShortCode(this.state.train.timeTableRows[0].stationShortCode);
+    const lastStation = this.stationNameByShortCode(this.state.train.timeTableRows.slice(-1)[0].stationShortCode);
+    const trainName = this.state.train.trainType + ' ' + this.state.train.trainNumber;
 
-    let arrivingThisStation = this.state.train.timeTableRows
+    const arrivingThisStation = this.state.train.timeTableRows
       .filter(station => station.stationShortCode === this.state.selectedStation.stationShortCode)
       .filter(stop => stop.type === this.state.stopType);
 
-    let scheduledStop = arrivingThisStation[0].scheduledTime;
-    let estimatedStop = arrivingThisStation[0].liveEstimateTime;
+    const scheduledStop = arrivingThisStation[0].scheduledTime;
+    const estimatedStop = arrivingThisStation[0].liveEstimateTime;
 
     this.setState({
       firstStation: firstStation,
@@ -39,7 +39,7 @@ export class TrainInfoCmp extends React.Component {
   }
 
   stationNameByShortCode(shortCode) {
-    let station = this.state.stationList.filter(station => station.stationShortCode === shortCode)[0];
+    const station = this.state.stationList.filter(station => station.stationShortCode === shortCode)[0];
     if(station) {
       return station.stationName;
     }
@@ -48,23 +48,25 @@ export class TrainInfoCmp extends React.Component {
   render() {
     const estimatedStop = new Date(this.state.estimatedStop);
     const scheduledStop = new Date(this.state.scheduledStop);
+
     const eHours = estimatedStop.getHours() <= 9 ? '0' + estimatedStop.getHours() : estimatedStop.getHours();
     const eMinutes = estimatedStop.getMinutes() <= 9 ? '0' + estimatedStop.getMinutes() : estimatedStop.getMinutes();
     const sHours = scheduledStop.getHours() <= 9 ? '0' + scheduledStop.getHours() : scheduledStop.getHours();
     const sMinutes = scheduledStop.getMinutes() <= 9 ? '0' + scheduledStop.getMinutes() : scheduledStop.getMinutes();
+
     const scheduledStopTime = sHours + ':' + sMinutes;
     const estimatedStopTime = eHours + ':' + eMinutes;
 
     const Cancelled = () => {
       return (
-        <tr className='cancelled'>
+        <tr className="cancelled">
           <td>{this.state.trainName}</td>
           <td>{this.state.firstStation}</td>
           <td>{this.state.lastStation}</td>
           <td>
             {scheduledStopTime}
             <br/>
-            <span className='hilight'>Cancelled</span>
+            <span className="hilight">Cancelled</span>
           </td>
         </tr>
       );
@@ -86,7 +88,7 @@ export class TrainInfoCmp extends React.Component {
           <td>{this.state.firstStation}</td>
           <td>{this.state.lastStation}</td>
           <td>
-            <span className='hilight'>{estimatedStopTime}</span>
+            <span className="hilight">{estimatedStopTime}</span>
             <br/>
             ({scheduledStopTime})
           </td>

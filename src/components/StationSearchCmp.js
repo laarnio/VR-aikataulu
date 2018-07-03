@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Select from 'react-select'
 import 'react-select/dist/react-select.css';
 
@@ -17,7 +17,6 @@ export class StationSearchCmp extends React.Component {
     this.setState({ selectedOption });
     if (selectedOption) {
       this.props.selectedStation(selectedOption);
-      console.log('Selected:', selectedOption);
     }
   };
 

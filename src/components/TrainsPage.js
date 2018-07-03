@@ -1,5 +1,5 @@
-import React from "react";
-import {TrainInfoCmp} from "./TrainInfoCmp";
+import React from 'react';
+import {TrainInfoCmp} from './TrainInfoCmp';
 
 
 export class TrainsPage extends React.Component {
@@ -36,8 +36,8 @@ export class TrainsPage extends React.Component {
   render() {
     const ArrOrDep = this.state.stopType === 'ARRIVAL' ? <th>Saapuu</th> : <th>Lähtee</th>;
     return (
-      <div className='container'>
-        <table width='100%'>
+      <div className="container">
+        <table width="100%">
           <thead>
           <tr>
             <th>Juna</th>

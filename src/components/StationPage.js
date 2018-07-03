@@ -5,10 +5,10 @@ import axios from "axios";
 import {NavBar} from "./NavBar";
 import {TrainsPage} from "./TrainsPage";
 
+
 import {
   Route
 } from 'react-router-dom'
-
 
 export class StationPage extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ export class StationPage extends React.Component {
       selectedStation: '',
       stationTrains: []
     };
+    console.log(props)
     this.setSelectedStation = this.setSelectedStation.bind(this);
   }
 
@@ -35,7 +36,6 @@ export class StationPage extends React.Component {
   }
 
   setSelectedStation(station) {
-    this.setState({selectedStation: station});
     let stationShortCode = station.stationShortCode;
     let url = 'https://rata.digitraffic.fi/api/v1/live-trains/station/'
       + stationShortCode
@@ -43,16 +43,15 @@ export class StationPage extends React.Component {
       + '&minutes_after_departure=0'
       + '&minutes_before_arrival=120'
       + '&minutes_after_arrival=0';
+
     axios.get(url)
       .then(res => {
-        console.log('tämä saatiin:',res.data);
         let trains = res.data
           .filter(train =>
             train.trainCategory !== 'Cargo'
             && train.trainCategory !== 'Locomotive'
             && train.trainCategory !== 'Shunting');
-        console.log('tämä jäi:', trains);
-        this.setState({stationTrains: trains})
+        this.setState({stationTrains: trains, selectedStation: station})
       })
       .catch(err => console.log(err));
   }
@@ -93,7 +92,8 @@ export class StationPage extends React.Component {
             : 'Loading stations'}
         </div>
         <div>
-          <NavBar/>
+          <br/><br/>
+          <NavBar activePage={this.props.location.pathname}/>
           <Route path={'/station/arriving'} component={arrivingPage}/>
           <Route path={'/station/departing'} component={departingPage} />
         </div>

@@ -53,18 +53,29 @@ tr:nth-child(even) {
 .App-intro {
   font-size: large;
 }
+.navbar {
+  margin-bottom: 0px;
+}
 
 .navbar.container .container {
+  padding: 0;
   border-bottom: 1px solid #ccc;
 }
 
-.navbar .nav.navbar-nav li:active {
+.navbar .nav.navbar-nav .active {
   border: 1px solid #ccc;
   border-bottom: 1px solid white;
+}
+.navbar .nav.navbar-nav .active a {
+  color:black;
 }
 
 .navbar .nav.navbar-nav li {
   border: 0px solid #ccc;
   margin-bottom: -1px;
-  border-radius: 4px;
+  border-radius: 2px;
+}
+.navbar-nav>li>a {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
