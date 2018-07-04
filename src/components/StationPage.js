@@ -6,7 +6,9 @@ import {StationNavBar} from './StationNavBar';
 import {TrainsPage} from './TrainsPage';
 
 import {
-  Route
+  Route,
+  Redirect,
+  Switch
 } from 'react-router-dom'
 
 export class StationPage extends React.Component {
@@ -94,8 +96,11 @@ export class StationPage extends React.Component {
         <div>
           <br/><br/>
           <StationNavBar activePage={this.props.location.pathname}/>
-          <Route path={'/station/arriving'} component={arrivingPage}/>
-          <Route path={'/station/departing'} component={departingPage} />
+          <Switch>
+            <Redirect exact from='/' to='/station/arriving'/>
+            <Route path={'/station/arriving'} component={arrivingPage}/>
+            <Route path={'/station/departing'} component={departingPage}/>
+          </Switch>
         </div>
       </div>
     );

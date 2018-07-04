@@ -39,9 +39,14 @@ th {
   width: 170px;
 }
 
+.fixed-station-width {
+  width: 250px;
+}
+
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
+
 .App-title {
   font-size: 1.5em;
 }
@@ -49,6 +54,7 @@ tr:nth-child(even) {
 .hilight {
   color:#ff0000;
 }
+
 .smaller {
   font-size: 12px;
 }
@@ -61,6 +67,7 @@ tr:nth-child(even) {
 .App-intro {
   font-size: large;
 }
+
 .navbar {
   margin-bottom: 0;
 }
@@ -75,10 +82,12 @@ tr:nth-child(even) {
   border-bottom: 1px solid white;
   background-color:#ffffff;
 }
+
 .navbar .nav.navbar-nav .focus {
   background-color:#ffffff;
 
 }
+
 .navbar .nav.navbar-nav .active a {
   color:#333;
 }
@@ -90,6 +99,7 @@ tr:nth-child(even) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 1px;
 }
+
 .navbar-nav>li>a {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -109,6 +119,7 @@ tr:nth-child(even) {
 .Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
   background-color: #dff0d81f;
 }
+
 @media (max-width: 767px) {
   .navbar-nav>li>a {
     padding-left:30px

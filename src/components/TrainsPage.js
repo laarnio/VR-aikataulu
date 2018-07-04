@@ -42,8 +42,8 @@ export class TrainsPage extends React.Component {
           <thead>
           <tr>
             <th className="fixed-train-width">Juna</th>
-            <th>Lähtöasema</th>
-            <th>Pääteasema</th>
+            <th className="fixed-station-width">Lähtöasema</th>
+            <th className="fixed-station-width">Pääteasema</th>
             {ArrOrDep}
           </tr>
           </thead>
