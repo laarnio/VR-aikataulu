@@ -5,7 +5,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 # VR-aikataulu sovellus
 Sovellus käyttää avointa API:a joka löytyy täältä: http:/rata.digitraffic.fi/api/v1/doc/index.html .
-![alt text](https://www.dropbox.com/s/b757vfa2yz0xuxq/Screenshot%202018-07-04%2011.37.00.png?raw=1)
+![alt text](https://www.dropbox.com/s/4y4s6vbazays7yp/Screenshot%202018-07-04%2015.39.41.png?raw=1)
 
 React-demo-sovellus, jolla voi hakea junien aikatauluja aseman mukaan.
 
