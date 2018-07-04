@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import {StationPage} from "./components/StationPage"
+import {StationPage} from './components/StationPage';
 import {
   BrowserRouter as Router,
     Route
 } from 'react-router-dom'
+
 class App extends Component {
   render() {
     return (
@@ -14,7 +15,6 @@ class App extends Component {
             <Route path='/' component={StationPage} />
           </div>
         </Router>
-
       </div>
     )
   }
