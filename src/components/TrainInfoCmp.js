@@ -59,11 +59,11 @@ export class TrainInfoCmp extends React.Component {
 
     const Cancelled = () => {
       return (
-        <tr className="cancelled">
-          <td>{this.state.trainName}</td>
-          <td>{this.state.firstStation}</td>
-          <td>{this.state.lastStation}</td>
-          <td>
+        <tr>
+          <td className="cancelled">{this.state.trainName}</td>
+          <td className="cancelled">{this.state.firstStation}</td>
+          <td className="cancelled">{this.state.lastStation}</td>
+          <td className="cancelled">
             {scheduledStopTime}
             <br/>
             <span className="hilight">Cancelled</span>
