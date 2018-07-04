@@ -2,7 +2,7 @@ import React from 'react';
 import {StationHeader} from './StationHeader';
 import {StationSearchCmp} from './StationSearchCmp';
 import axios from 'axios';
-import {NavBar} from './NavBar';
+import {StationNavBar} from './StationNavBar';
 import {TrainsPage} from './TrainsPage';
 
 import {
@@ -65,6 +65,7 @@ export class StationPage extends React.Component {
         />
       );
     };
+
     const arrivingPage = () => {
       return (
         <TrainsPage
@@ -75,6 +76,7 @@ export class StationPage extends React.Component {
         />
       );
     };
+
     return (
       <div>
         <div>
@@ -91,7 +93,7 @@ export class StationPage extends React.Component {
         </div>
         <div>
           <br/><br/>
-          <NavBar activePage={this.props.location.pathname}/>
+          <StationNavBar activePage={this.props.location.pathname}/>
           <Route path={'/station/arriving'} component={arrivingPage}/>
           <Route path={'/station/departing'} component={departingPage} />
         </div>

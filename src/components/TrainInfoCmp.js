@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export class TrainInfoCmp extends React.Component {
   constructor(props) {
     super(props);
