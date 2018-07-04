@@ -90,7 +90,7 @@ export class TrainInfoCmp extends React.Component {
           <td>
             <span className="hilight">{estimatedStopTime}</span>
             <br/>
-            ({scheduledStopTime})
+            <span className="smaller">({scheduledStopTime})</span>
           </td>
         </tr>
       );

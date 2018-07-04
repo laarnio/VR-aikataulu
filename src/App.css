@@ -8,17 +8,16 @@
 }
 
 .App-header {
-  background-color: darkgreen;
   height: 50px;
   padding: 20px;
   color: white;
 }
 
 .App-Station-header {
-  background-color: darkgreen;
+  background-color: #4c8e14;
   padding: 20px;
   color: white;
-  box-shadow: 0px 3px 5px 0px #cccccc;
+  box-shadow: 0 3px 5px 0 #cccccc;
 }
 
 td {
@@ -26,11 +25,18 @@ td {
   height: 50px;
   padding: 10px;
   vertical-align: center;
+  color: #4f5d5d;
 }
 
 th {
   border-bottom: 1px solid #ddd;
   padding: 10px;
+  font-size: 12px;
+  color: #4f5d5d;
+}
+
+.fixed-train-width {
+  width: 170px;
 }
 
 tr:nth-child(even) {
@@ -41,8 +47,10 @@ tr:nth-child(even) {
 }
 
 .hilight {
-  color:red;
-  font-size: large;
+  color:#ff0000;
+}
+.smaller {
+  font-size: 12px;
 }
 
 .cancelled {
@@ -54,7 +62,7 @@ tr:nth-child(even) {
   font-size: large;
 }
 .navbar {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .navbar.container .container {
@@ -65,17 +73,44 @@ tr:nth-child(even) {
 .navbar .nav.navbar-nav .active {
   border: 1px solid #ccc;
   border-bottom: 1px solid white;
+  background-color:#ffffff;
+}
+.navbar .nav.navbar-nav .focus {
+  background-color:#ffffff;
+
 }
 .navbar .nav.navbar-nav .active a {
-  color:black;
+  color:#333;
 }
 
 .navbar .nav.navbar-nav li {
-  border: 0px solid #ccc;
+  border: 0 solid #ccc;
   margin-bottom: -1px;
-  border-radius: 2px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 1px;
 }
 .navbar-nav>li>a {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+
+.nav>li>a:focus {
+  background-color: #ffffff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.nav>li>a:hover {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
+  background-color: #dff0d81f;
+}
+@media (max-width: 767px) {
+  .navbar-nav>li>a {
+    padding-left:30px
+  }
 }

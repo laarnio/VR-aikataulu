@@ -1,10 +1,9 @@
-import React from "react";
-import {StationHeader} from "./StationHeader";
-import {StationSearchCmp} from "./StationSearchCmp";
-import axios from "axios";
-import {NavBar} from "./NavBar";
-import {TrainsPage} from "./TrainsPage";
-
+import React from 'react';
+import {StationHeader} from './StationHeader';
+import {StationSearchCmp} from './StationSearchCmp';
+import axios from 'axios';
+import {NavBar} from './NavBar';
+import {TrainsPage} from './TrainsPage';
 
 import {
   Route
@@ -20,7 +19,6 @@ export class StationPage extends React.Component {
       selectedStation: '',
       stationTrains: []
     };
-    console.log(props)
     this.setSelectedStation = this.setSelectedStation.bind(this);
   }
 
@@ -84,8 +82,8 @@ export class StationPage extends React.Component {
         </div>
         <hr/>
         <div>
-          {this.state.showSearchComp ?
-            <StationSearchCmp
+          {this.state.showSearchComp
+            ? <StationSearchCmp
               labelKey={this.state.labelKeyForSearch}
               stationList={this.state.stationList}
               selectedStation = {this.setSelectedStation}/>

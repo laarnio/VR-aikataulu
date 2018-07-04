@@ -1,7 +1,6 @@
 import React from 'react';
 import {TrainInfoCmp} from './TrainInfoCmp';
 
-
 export class TrainsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -15,12 +14,14 @@ export class TrainsPage extends React.Component {
     this.compareArrivalTimes = this.compareArrivalTimes.bind(this);
   }
 
+  //Filter trains to match station and stoptype
   filterArrivingTrains(trains) {
     return trains.filter(train => train.timeTableRows.some(station => {
       return station.stationShortCode === this.state.station.stationShortCode && station.type === this.state.stopType;
     }));
   }
 
+  //Compare times for table sort
   compareArrivalTimes(a, b){
     const stationA = a.timeTableRows.find(station => station.stationShortCode === this.state.station.stationShortCode
       && station.type === this.state.stopType);
@@ -40,7 +41,7 @@ export class TrainsPage extends React.Component {
         <table width="100%">
           <thead>
           <tr>
-            <th>Juna</th>
+            <th className="fixed-train-width">Juna</th>
             <th>Lähtöasema</th>
             <th>Pääteasema</th>
             {ArrOrDep}
