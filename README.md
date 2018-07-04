@@ -12,19 +12,23 @@ React-demo-sovellus, jolla voi hakea junien aikatauluja aseman mukaan.
 ## Komponentit
 ### Station Page
 Pääkomponentti applikaation rakentamiselle.
+
 Props: 
 
 ### StationHeader
 Komponentti sisältää yläheaderin.
+
 Props: 
 
 ### StationNavBar
 Navigointi lähtevien ja saapuvien junien välilehtien välillä.
+
 Props: 
  * activePage (tiedon millä välilehdellä ollaan)
 
 ### StationSearchComponent
 Komponentti asemahaulle. Käyttää react-select:iä.
+
 Props: 
  * labelKey (Minkä mukaan etsitään, tässä: stationName)
  * stationList (Lista asemista)
@@ -32,6 +36,7 @@ Props:
  
 ### TrainsPage
 Komponentti junasivulle. Käytetään sekä saapuvien, että lähtevien junien näyttämisessä.
+
 Props: 
  * stationTrains (taulukko junista, jotka pysähtyvät valitulla asemalla)
  * stationList (taulukko kaikista asemista)
@@ -39,6 +44,7 @@ Props:
 
 ### TrainInfoCmp
 Komponentti yhden junan tietojen näyttämiseen taulukossa.
+
 Props:
  * stopType (pysähdyksen tyyppi, tässä: 'ARRIVAL' tai 'DEPARTURE')
  * station (valittu asema)
