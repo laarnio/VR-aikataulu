@@ -4,8 +4,6 @@
     <list default="true" id="25e47e0d-b765-49af-a2db-d3c18fe5286e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/StationPage.js" afterPath="$PROJECT_DIR$/src/components/StationPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/TrainsPage.js" afterPath="$PROJECT_DIR$/src/components/TrainsPage.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,7 +25,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
@@ -51,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="125" column="3" lean-forward="true" selection-start-line="125" selection-start-column="3" selection-end-line="125" selection-end-column="3" />
+            <state relative-caret-position="344">
+              <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -362,7 +360,7 @@
       <updated>1530194218291</updated>
       <workItem from="1530194220015" duration="324000" />
       <workItem from="1530194876255" duration="14588000" />
-      <workItem from="1530267811980" duration="75071000" />
+      <workItem from="1530267811980" duration="75402000" />
     </task>
     <task id="LOCAL-00001" summary="Junien filteröinti saapumisen ja lähtemisen perusteella tehdään nyt TrainsPage:illa. Kellonajat näkyvissä saapumiselle ja lähtemiselle.">
       <created>1530529777862</created>
@@ -434,11 +432,18 @@
       <option name="project" value="LOCAL" />
       <updated>1530704795967</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Taulukon kolumneille fixed-leveydet.&#10;'/' redirect '/station/arriving'">
+      <created>1530707638176</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1530707638176</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89983000" />
+    <option name="totallyTimeSpent" value="90314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="48" y="80" width="1416" height="794" extended-state="0" />
@@ -492,7 +497,8 @@
     <MESSAGE value="Pieniä korjauksia." />
     <MESSAGE value="Peruutetun junan ulkoasussa oli bugi joka nyt korjattu." />
     <MESSAGE value="Nimimuutos komponentille NavBar -&gt; StationNavBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nimimuutos komponentille NavBar -&gt; StationNavBar" />
+    <MESSAGE value="Taulukon kolumneille fixed-leveydet.&#10;'/' redirect '/station/arriving'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Taulukon kolumneille fixed-leveydet.&#10;'/' redirect '/station/arriving'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -693,14 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="125" column="3" lean-forward="true" selection-start-line="125" selection-start-column="3" selection-end-line="125" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/StationPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -718,6 +716,14 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
