@@ -1,8 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
 # VR-aikataulu sovellus
 Sovellus käyttää avointa API:a joka löytyy täältä: http:/rata.digitraffic.fi/api/v1/doc/index.html .
 ![alt text](https://www.dropbox.com/s/4y4s6vbazays7yp/Screenshot%202018-07-04%2015.39.41.png?raw=1)
